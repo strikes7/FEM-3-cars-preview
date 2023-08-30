@@ -1,0 +1,84 @@
+@use "../_colors" as *;
+
+.cars {
+  inline-size: min(57.5rem, 95%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &__type:nth-child(1) {
+    background-image: url("../images/icon-sedans.svg");
+    color: $clr-primary-orange;
+  }
+
+  &__type:nth-child(2) {
+    background-image: url("../images/icon-suvs.svg");
+    background-color: $clr-primary-dark-cyan-100;
+    color: $clr-primary-dark-cyan-100;
+  }
+
+  &__type:nth-child(3) {
+    background-image: url("../images/icon-luxury.svg");
+    background-color: $clr-primary-dark-cyan-200;
+    color: $clr-primary-dark-cyan-200;
+  }
+  &__type {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2.75rem 2.75rem 2.75rem;
+    background-size: 2.75rem;
+    background-repeat: no-repeat;
+    background-position: 2.75rem 2.75rem;
+    background-color: $clr-primary-orange;
+
+    &__title {
+      margin-block: 0 2rem;
+      text-transform: uppercase;
+      font-size: 2.25rem;
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 700;
+      color: $clr-neutral-light-gray;
+    }
+
+    &__paragraph {
+      margin-block: 0 5.65rem;
+      line-height: 1.7;
+      font-family: "Lexend Deca", sans-serif;
+      font-weight: 400;
+      color: $clr-neutral-white-semi;
+    }
+
+    &__link {
+      inline-size: fit-content;
+      color: inherit;
+      margin-block-start: auto;
+      padding: 1rem 2rem;
+      display: inline-block;
+      border-radius: 2em;
+      border: 2px solid $clr-neutral-light-gray;
+      background-color: $clr-neutral-light-gray;
+      text-decoration: none;
+      font-family: "Lexend Deca", sans-serif;
+      font-weight: 400;
+      transition: color 0.3s ease-in, background-color 0.3s ease-in;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: $clr-neutral-light-gray;
+      }
+    }
+  }
+}
+
+@media screen and (width < 50em) {
+  .cars {
+    grid-template-columns: 1fr;
+    inline-size: min(20rem, 95%);
+
+    &__type__paragraph {
+      margin-block-end: 2rem;
+    }
+  }
+}

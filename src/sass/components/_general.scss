@@ -1,0 +1,10 @@
+@use "../colors" as *;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 100vh;
+  font-size: 0.95rem;
+  background-color: $clr-neutral-light-gray;
+}
